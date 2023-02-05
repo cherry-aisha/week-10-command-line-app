@@ -1,7 +1,6 @@
 const { default: inquirer } = require("inquirer");
 
 const manager = require('../lib/manager');
-const employee = require('../lib/employee');
 const intern = require('../lib/intern');
 const engineer = require('../lib/engineer');
 
@@ -10,7 +9,6 @@ const questions = require('./questions');
 const buildTeamPage = require('./pageBuilder');
 
 const managers = [];
-const employees = [];
 const interns = [];
 const engineers = [];
 
@@ -28,22 +26,6 @@ const doManagerQuestions = () => {
 
         //Show the man menu again
         doMenuQuestions();
-    })
-}
-
-const doEmployeeQuestions = () => {
-    inquirer
-    .prompt(questions.employeeQuestions)
-    .then((response) => {
-
-                //Create a new employee object
-                const employee = new employee(response.id, response.name, response.email, response.role);
-
-                //Add to array of employees
-                employees.push(employee);
-        
-                //Show the man menu again
-                doMenuQuestions();
     })
 }
 
@@ -91,12 +73,6 @@ const doMenuQuestions = () => {
                 doManagerQuestions()
                 break;
 
-            case 'Add an Employee':
-
-                 //Load the Engineer Questions
-                doEmployeeQuestions()
-                break;
-
             case 'Add an Engineer':
 
                 //Load the Engineer Questions
@@ -116,7 +92,7 @@ const doMenuQuestions = () => {
                 buildTeamPage(managers, engineers, interns);
                 break;
             default:
-                comsole.log('default');
+                console.log('default');
                 break;
 
         }
