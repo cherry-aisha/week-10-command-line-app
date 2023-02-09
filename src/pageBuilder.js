@@ -4,7 +4,7 @@ const manager = require('../lib/manager');
 const intern = require('../lib/intern');
 const engineer = require('../lib/engineer');
 
-const buildTeamPage = (managers, engineers, interns) => {
+const pageBuilder = () => (managers, engineers, interns) => {
 
     //Open html template file
     let html = fs.readFileSync('./template/index.html', 'utf8');

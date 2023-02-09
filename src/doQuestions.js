@@ -85,10 +85,10 @@ const doMenuQuestions = () => {
                 doInternQuestions()
                 break;
             
-            case 'Built the team':
+            case 'Build the team':
                 console.log("Build the team")
 
-                //Call Built the Team Page
+                //Call Build the Team Page
                 buildTeamPage(managers, engineers, interns);
                 break;
             default:

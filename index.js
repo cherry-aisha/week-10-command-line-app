@@ -1,13 +1,10 @@
-const { prompt } = require('inquirer');
-const questions = require('./src/questions');
-const htmlGen = require('./src/htmlGen');
-const init = () => {
+const pageBuilder = require('./src/pageBuilder');
 
-    
-    prompt(questions).then(ans => {
-        if(ans.needEmp) return init();
-        console.log(ans);
+const init = () => {
+    inquirer.prompt(questions).then(answers => {
+        console.log(answers)
+        pageBuilder("html", answers)
     })
-};
+}
 
 init();
