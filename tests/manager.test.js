@@ -1,4 +1,4 @@
-const manager = require("../lib/manager");
+const Manager = require("../lib/manager");
 
 describe("manager", () => {
     describe("Initialization", () => {
@@ -10,18 +10,17 @@ describe("manager", () => {
             const officeNumber = "0000001"
             const role = "Manager";
 
-            const obj = new intern(id, name, email, officeNumber, role);
+            const obj = new Manager(id, name, email, officeNumber);
 
             expect(obj.id).toEqual(id);
             expect(obj.name).toEqual(name);
             expect(obj.email).toEqual(email);
             expect(obj.officeNumber).toEqual(officeNumber);
-            expect(obj.role).toEqual(role);
 
             expect(obj.getId()).toEqual(id);
             expect(obj.getName()).toEqual(name);
             expect(obj.getEmail()).toEqual(email);
-            expect(obj.getschool()).toEqual(officeNumber);
+            expect(obj.getOfficeNumber()).toEqual(officeNumber);
             expect(obj.getRole()).toEqual(role);
         });
     });

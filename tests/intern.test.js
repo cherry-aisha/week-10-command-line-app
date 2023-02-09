@@ -8,21 +8,19 @@ describe("intern", () => {
             const name = "Collette";
             const email = "test@test.com";
             const school = "test school"
-            const role = "Intern";
 
-            const obj = new intern(id, name, email, school, role);
+            const obj = new intern(id, name, email, school);
 
             expect(obj.id).toEqual(id);
             expect(obj.name).toEqual(name);
             expect(obj.email).toEqual(email);
             expect(obj.school).toEqual(school);
-            expect(obj.role).toEqual(role);
 
             expect(obj.getId()).toEqual(id);
             expect(obj.getName()).toEqual(name);
             expect(obj.getEmail()).toEqual(email);
-            expect(obj.getschool()).toEqual(school);
-            expect(obj.getRole()).toEqual(role);
+            expect(obj.getSchool()).toEqual(school);
+            expect(obj.getRole()).toEqual("Intern");
         });
     });
 });

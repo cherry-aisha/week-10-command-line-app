@@ -1,4 +1,13 @@
-const doMenuQuestions = require('./src/doQuestions');
+const { prompt } = require('inquirer');
+const questions = require('./src/questions');
+const htmlGen = require('./src/htmlGen');
+const init = () => {
 
-//Strats the program
-doMenuQuestions();
+    
+    prompt(questions).then(ans => {
+        if(ans.needEmp) return init();
+        console.log(ans);
+    })
+};
+
+init();

@@ -10,18 +10,17 @@ describe("engineer", () => {
             const github = "@test"
             const role = "Engineer";
 
-            const obj = new engineer(id, name, email, github, role);
+            const obj = new engineer(id, name, email, github);
 
             expect(obj.id).toEqual(id);
             expect(obj.name).toEqual(name);
             expect(obj.email).toEqual(email);
             expect(obj.github).toEqual(github);
-            expect(obj.role).toEqual(role);
 
             expect(obj.getId()).toEqual(id);
             expect(obj.getName()).toEqual(name);
             expect(obj.getEmail()).toEqual(email);
-            expect(obj.getgithub()).toEqual(github);
+            expect(obj.getGithub()).toEqual(github);
             expect(obj.getRole()).toEqual(role);
         });
     });
