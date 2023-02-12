@@ -1,9 +1,4 @@
-const inquirer = require('inquirer');
-const fs = require('fs');
-
-const MenuQuestions =
-inquirer
-    .prompt ([
+const menuQuestions =([
     {
         type: 'list',
         name: 'role',
@@ -12,9 +7,7 @@ inquirer
     }
 ]);
 
-const managerQuestions = 
-inquirer
-    .prompt ([
+const managerQuestions = ([
     {
         type: 'input',
         name: 'id',
@@ -34,12 +27,10 @@ inquirer
         type: 'input',
         name: 'officeNumber',
         message: 'What is the manager\'s office number?',
-    },
+    }
 ]);
 
-const internQuestions =
-inquirer
-    .prompt ([
+const internQuestions = ([
     {
         type: 'input',
         name: 'id',
@@ -59,12 +50,10 @@ inquirer
         type: 'input',
         name: 'school',
         message: 'What is the intern\'s school?',
-    },
+    }
 ]);
 
-const engineerQuestions = 
-inquirer
-    .prompt ([
+const engineerQuestions = ([
     {
         type: 'input',
         name: 'id',
@@ -84,13 +73,7 @@ inquirer
         type: 'input',
         name: 'github',
         message: 'What is the engineer\'s GitHub?',
-    },
-])
+    }
+]);
 
-.then((answers) => {
-    const htmlGen = generate(answers);
-
-    console.log("generating index.html");
-};
-
-module.exports = questions;
+module.exports = {menuQuestions, managerQuestions, internQuestions, engineerQuestions};

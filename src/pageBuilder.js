@@ -60,3 +60,5 @@ const pageBuilder = () => (managers, engineers, interns) => {
 
         }
     }
+
+    pageBuilder();

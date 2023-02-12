@@ -1,9 +1,3 @@
-const pageBuilder = require('./src/pageBuilder');
+const doMenuQuestions = require('./src/doQuestions');
 
-const init = () => {
-    doQuestions().then(answer => {
-        console.log(answer);
-    })
-    }
-
-init();
+doQuestions();

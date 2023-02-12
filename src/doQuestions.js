@@ -61,9 +61,9 @@ const doEngineerQuestions = () => {
     })
 }
 
-const doMenuQuestions = () => {
+const doQuestions = () => {
     inquirer
-    .prompt(Questions.MainMenuQuestions)
+    .prompt(questions.menuQuestions)
     .then((response) => {
         switch (response.option) {
 
@@ -91,10 +91,7 @@ const doMenuQuestions = () => {
                 //Call Build the Team Page
                 buildTeamPage(managers, engineers, interns);
                 break;
-            default:
-                console.log('default');
-                break;
 
         }
     })
-}
+};
