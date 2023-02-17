@@ -1,64 +1,60 @@
 const fs = require('fs');
 
-const manager = require('../lib/manager');
-const intern = require('../lib/intern');
-const engineer = require('../lib/engineer');
+const pageGenerator = (managers, engineers, interns) => {
 
-const pageBuilder = () => (managers, engineers, interns) => {
-
-    //Open html template file
+    //HTML Team Page Template
     let html = fs.readFileSync('./template/index.html', 'utf8');
-    if (html)
-    {
-        //add managers to html
+    if (html) {
+        //Add Managers if added through questions
         let managerHtml = '';
         managers.forEach(manager => {
-            managerHtml += `<div class="card">
-                <div class="cardHeader">
-                <h2>${manager.name}</h2>
-                <p>Employee ID: ${manager.id}</p>
-                <p>Email: <a href='mailto:${manager.email}">${manager.email}</p>
-                <p>Office Number: ${manager.officeNumber}</p>
+            managerHtml += `<div class="team-card">
+                <div class="teamCardH">
+                <h2>${manager.getName()}</h2>
+                <p>Employee ID: ${manager.getId()}</p>
+                <p>Email: <a href='mailto:${manager.getEmail()}'>${manager.getEmail()}</a></p>
+                <p>Office Number: ${manager.getOfficeNumber()}</p>
                 </div>
             </div>`;
         })
-                //add interns to html
-                let internHtml = '';
-                interns.forEach(intern => {
-                    internHtml += `<div class="card">
-                        <div class="cardHeader">
-                        <h2>${intern.name}</h2>
-                        <p>Employee ID: ${intern.id}</p>
-                        <p>Email: <a href='mailto:${intern.email}">${intern.email}</p>
-                        <p>School: ${intern.school}</p>
-                        </div>
-                    </div>`;
-                })
+        //Add Engineers if added through questions
+            let engineerHtml = '';
+            engineers.forEach(engineer => {
+                engineerHtml += `<div class="team-card">
+                    <div class="teamCardH">
+                    <h2>${engineer.getName()}</h2>
+                    <p>Employee ID: ${engineer.getId()}</p>
+                    <p>Email: <a href='mailto:${engineer.getEmail()}'>${engineer.getEmail()}</a></p>
+                    <p>Github: <a href='https://github.com/${engineer.getGithub()}' target='_blank'>${engineer.getGithub()}'s Github Repo</a></p>
+                    </div>
+                </div>`;
+            })
+        //Add Interns if added through questions
+        let internHtml = '';
+        interns.forEach(intern => {
+            internHtml += `<div class="team-card">
+                <div class="teamCardH">
+                <h2>${intern.getName()}</h2>
+                <p>Employee ID: ${intern.getId()}</p>
+                <p>Email: <a href='mailto:${intern.getEmail()}'>${intern.getEmail()}</a></p>
+                <p>School: ${intern.getSchool()}</p>
+                </div>
+            </div>`;
+        })
 
-                //add engineers to html
-                let engineerHtml = '';
-                engneer.forEach(engineer => {
-                    engineerHtml += `<div class="card">
-                        <div class="cardHeader">
-                        <h2>${engineer.name}</h2>
-                        <p>Employee ID: ${engineer.id}</p>
-                        <p>Email: <a href='mailto:${engineer.email}">${engineer.email}</p>
-                        <p>Github: <a href="${engineer.github}'s Github Repo"'https://github.com/${engineer.github}></p>
-                        </div>
-                    </div>`;
-                })
+        // Employees added to HTML team page
+        html = html.replace('<!---Managers-->', managerHtml);
+        html = html.replace('<!---Engineers-->', engineerHtml);
+        html = html.replace('<!---Interns-->', internHtml);
 
-            // Insert employee sections onto html page
-            html = html.replace('<!---managers-->', managerHtml);
-            html = html.replace('<!---engineers-->', engineerHtml);
-            html = html.replace('<!---intern-->', internHtml);
 
-            // Write to html
-            fs.writeFileSync('./dist/team.html', html, 'utf8');
+        console.log(html)
+        // Write to html
+        fs.writeFileSync('./dist/team.html', html, 'utf8');
 
-            console.log ('Team page built!');
+        console.log('Team page built!');
 
-        }
     }
+}
 
-    pageBuilder();
+module.exports = pageGenerator;

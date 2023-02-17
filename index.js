@@ -1,3 +1,3 @@
-const doMenuQuestions = require('./src/doQuestions');
+const doQuestions = require('./src/doQuestions');
 
-doQuestions();
+promptQuestions();

@@ -1,9 +1,9 @@
-const menuQuestions =([
+const menuQuery = ([
     {
         type: 'list',
-        name: 'role',
-        message: 'What would you like to do?',
-        choices: ['Add a Manager', 'Add an Engineer', 'Add an Intern'],
+        name: 'option',
+        message: 'Who would you like to add to your team?',
+        choices: ['Manager', 'Engineer', 'Intern', 'I want to finish building the team'],
     }
 ]);
 
@@ -11,7 +11,7 @@ const managerQuestions = ([
     {
         type: 'input',
         name: 'id',
-        message: 'What is the manager\'s ID number?',
+        message: 'What is the manager\'s ID?',
     },
     {
         type: 'input',
@@ -21,7 +21,7 @@ const managerQuestions = ([
     {
         type: 'input',
         name: 'email',
-        message: 'What is the manager\'s email?',
+        message: 'What is the manager\'s email address?',
     },
     {
         type: 'input',
@@ -30,34 +30,11 @@ const managerQuestions = ([
     }
 ]);
 
-const internQuestions = ([
-    {
-        type: 'input',
-        name: 'id',
-        message: 'What is the intern\'s ID number?',
-    },
-    {
-        type: 'input',
-        name: 'name',
-        message: 'What is the intern\'s name?',
-    },
-    {
-        type: 'input',
-        name: 'email',
-        message: 'What is the intern\'s email?',
-    },
-    {
-        type: 'input',
-        name: 'school',
-        message: 'What is the intern\'s school?',
-    }
-]);
-
 const engineerQuestions = ([
     {
         type: 'input',
         name: 'id',
-        message: 'What is the engineer\'s ID number?',
+        message: 'What is the engineer\'s ID?',
     },
     {
         type: 'input',
@@ -67,13 +44,36 @@ const engineerQuestions = ([
     {
         type: 'input',
         name: 'email',
-        message: 'What is the engneer\'s email?',
+        message: 'What is the engneer\'s email address?',
     },
     {
         type: 'input',
         name: 'github',
-        message: 'What is the engineer\'s GitHub?',
+        message: 'What is the engineer\'s GitHub page URL?',
     }
 ]);
 
-module.exports = {menuQuestions, managerQuestions, internQuestions, engineerQuestions};
+const internQuestions = ([
+    {
+        type: 'input',
+        name: 'id',
+        message: 'What is the intern\'s ID?',
+    },
+    {
+        type: 'input',
+        name: 'name',
+        message: 'What is the intern\'s name?',
+    },
+    {
+        type: 'input',
+        name: 'email',
+        message: 'What is the intern\'s email address?',
+    },
+    {
+        type: 'input',
+        name: 'school',
+        message: 'What is the intern\'s school?',
+    }
+]);
+
+module.exports = { menuQuery, managerQuestions, internQuestions, engineerQuestions };
