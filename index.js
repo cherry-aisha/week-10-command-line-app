@@ -1,3 +1,3 @@
-const doQuestions = require('./src/doQuestions');
+const promptQuestions = require('./src/promptQuestions');
 
 promptQuestions();

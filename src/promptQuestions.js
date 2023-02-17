@@ -1,8 +1,8 @@
 const inquirer = require("inquirer");
 
-const Manager = require('../lib/manager');
-const Engineer = require('../lib/engineer');
-const Intern = require('../lib/intern');
+const Manager = require('../lib/Manager');
+const Engineer = require('../lib/Engineer');
+const Intern = require('../lib/Intern');
 
 const questions = require('./questions');
 
@@ -19,10 +19,8 @@ const promptManagerQuestions = () => {
 
             //Create a new manager object
             const newManager = new Manager(response.id, response.name, response.email, response.officeNumber);
-
             //Add to array of managers
             managers.push(newManager);
-
             //Show the man menu again
             promptQuestions();
         })
@@ -35,12 +33,10 @@ const promptInternQuestions = () => {
 
             //Create a new intern object
             const newIntern = new Intern(response.id, response.name, response.email, response.school);
-
             //Add to array of interns
             interns.push(newIntern);
-
             //Show the man menu again
-            doQuestions();
+            promptQuestions();
         })
 }
 
@@ -51,12 +47,10 @@ const promptEngineerQuestions = () => {
 
             //Create a new engineer object
             const newEngineer = new Engineer(response.id, response.name, response.email, response.github);
-
             //Add to array of engineers
             engineers.push(newEngineer);
-
             //Show the man menu again
-            doQuestions();
+            promptQuestions();
         })
 }
 
@@ -68,26 +62,22 @@ const promptQuestions = () => {
             switch (response.option) {
 
                 case 'Add a Manager':
-
                     //Load the Manager Questions
                     promptManagerQuestions()
                     break;
 
                 case 'Add an Engineer':
-
                     //Load the Engineer Questions
                     promptEngineerQuestions()
                     break;
 
                 case 'Add an Intern':
-
                     //Load the Intern Questions
                     promptInternQuestions()
                     break;
 
                 case 'Finish Building Team':
                     console.log("Build the team")
-
                     //Call Build the Team Page
                     generateTeamPage(managers, interns, engineers);
                     break;
