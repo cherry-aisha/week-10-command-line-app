@@ -35,7 +35,7 @@ const promptInternQuestions = () => {
             const newIntern = new Intern(response.id, response.name, response.email, response.school);
             //Add to array of interns
             interns.push(newIntern);
-            //Show the man menu again
+            //Show the main menu again
             promptQuestions();
         })
 }
