@@ -1,11 +1,8 @@
 const inquirer = require("inquirer");
-
 const Manager = require('../lib/Manager');
 const Engineer = require('../lib/Engineer');
 const Intern = require('../lib/Intern');
-
 const questions = require('./questions');
-
 const generateTeamPage = require('./pageBuilder');
 
 const managers = [];
@@ -79,7 +76,7 @@ const promptQuestions = () => {
                 case 'Finish Building Team':
                     console.log("Build the team")
                     //Call Build the Team Page
-                    generateTeamPage(managers, interns, engineers);
+                    generateTeamPage(Managers, Interns, Engineers);
                     break;
 
             }
