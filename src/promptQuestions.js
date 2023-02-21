@@ -58,25 +58,25 @@ const promptQuestions = () => {
             console.log('option is set to ', response.option)
             switch (response.option) {
 
-                case 'Add a Manager':
+                case 'Manager':
                     //Load the Manager Questions
                     promptManagerQuestions()
                     break;
 
-                case 'Add an Engineer':
+                case 'Engineer':
                     //Load the Engineer Questions
                     promptEngineerQuestions()
                     break;
 
-                case 'Add an Intern':
+                case 'Intern':
                     //Load the Intern Questions
                     promptInternQuestions()
                     break;
 
-                case 'Finish Building Team':
+                case 'Build':
                     console.log("Build the team")
                     //Call Build the Team Page
-                    generateTeamPage(Managers, Interns, Engineers);
+                    generateTeamPage(managers, interns, engineers);
                     break;
 
             }

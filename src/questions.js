@@ -3,7 +3,7 @@ const menuQuery = ([
         type: 'list',
         name: 'option',
         message: 'Who would you like to add to your team?',
-        choices: ['Manager', 'Engineer', 'Intern', 'I want to finish building the team'],
+        choices: ['Manager', 'Engineer', 'Intern', 'Build'],
     }
 ]);
 
