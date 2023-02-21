@@ -22,7 +22,7 @@ the user to list as many tem members as they need.
 - Displays Github repo of engineers when clicking on their link.
 
 #### Walk Through
-![Watch the Walk Through]()
+[Click Here to Watch the Walk Through](https://drive.google.com/file/d/1hz7qLOcQAn4Xgo27AP3VZw4mH3_mfma1/view)
 
 ##### Visit The GitHub Repo
-Link to [Github Repo]()
+[Click Here to Visit the Github Repo](https://github.com/cherry-aisha/week-10-command-line-app)
