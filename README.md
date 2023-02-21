@@ -21,3 +21,8 @@ the user to list as many tem members as they need.
 - Clickable email links.
 - Displays Github repo of engineers when clicking on their link.
 
+#### Walk Through
+![Watch the Walk Through]()
+
+##### Visit The GitHub Repo
+Link to [Github Repo]()
